@@ -17,6 +17,7 @@ function onInputChange(evt) {
     if (name !== '') {
         fetchCountries(name).then(data => {
             if (data.length >10) {
+                clearContent();
                 Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
             } else if (data.length === 0) {
                 clearContent();
